@@ -1,6 +1,10 @@
 import { useCallback } from "react";
+import { useRouter } from 'next/router';
 
 const HOME = () => {
+  const router = useRouter();
+
+
   const onFrameContainer76Click = useCallback(() => {
     // Please sync "About" to the project
   }, []);
@@ -28,16 +32,13 @@ const HOME = () => {
   }, []);
 
   const onHomeTextClick = useCallback(() => {
-    const anchor = document.querySelector(
-      "[data-scroll-to='rectangleSection']"
-    );
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
+    router.push('/');
+
   }, []);
 
   const onAboutTextClick = useCallback(() => {
-    // Please sync "LOKASI" to the project
+    router.push('/about');
+
   }, []);
 
   const onPhilosophyText1Click = useCallback(() => {
@@ -45,7 +46,7 @@ const HOME = () => {
   }, []);
 
   const onEventsTextClick = useCallback(() => {
-    // Please sync "LOKASI" to the project
+    router.push('/home');
   }, []);
 
   return (

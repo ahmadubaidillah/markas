@@ -1,19 +1,22 @@
 import { useCallback } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 const About = () => {
   const router = useRouter();
 
   const onAboutTextClick = useCallback(() => {
-    // Please sync "LOKASI" to the project
+    router.push('/about');
+  }, []);
+  const onHomeTextClick = useCallback(() => {
+    router.push('/');
   }, []);
 
   const onPhilosophyText1Click = useCallback(() => {
-    router.push("/");
-  }, [router]);
+    // Please sync "About" to the project
+  }, []);
 
   const onEventsTextClick = useCallback(() => {
-    // Please sync "LOKASI" to the project
+    router.push('/event');
   }, []);
 
   return (
@@ -2424,6 +2427,8 @@ const About = () => {
             lineHeight: "30px",
             fontWeight: "300",
           }}
+          onClick={onHomeTextClick}
+
         >
           Home
         </div>
